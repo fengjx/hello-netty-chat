@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: hnc-link
+  profiles:
+    active: test
+  main:
+    web-application-type: none
+
+logging:
+  path: ./logs
+
+hnc:
+  link:
+    discovery:
+      enabled: true
+      zk-connect: 127.0.0.1:2181
+      instance:
+        host: 192.168.1.102
+        port: 1024
+
+
+
