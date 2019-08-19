@@ -1,21 +1,16 @@
-package com.fengjx.hello.netty.cha.link;
+package com.fengjx.hello.netty.chat.auth;
 
-import com.fengjx.hello.netty.cha.link.server.LinkServer;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-
-import javax.annotation.Resource;
 
 /**
  * @author fengjianxin
  */
 @SpringBootApplication
-public class LinkApp {
+public class AuthApp {
 
     public static void main(String[] args) {
-        SpringApplication.run(LinkApp.class, args);
+        SpringApplication.run(AuthApp.class, args);
     }
-
-
 
 }

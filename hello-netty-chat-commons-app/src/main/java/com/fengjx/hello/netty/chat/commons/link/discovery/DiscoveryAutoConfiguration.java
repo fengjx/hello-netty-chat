@@ -14,7 +14,7 @@ import org.springframework.context.annotation.Configuration;
         prefix = "hnc.link.discovery",
         name = "enabled",
         havingValue = "true",
-        matchIfMissing = true
+        matchIfMissing = false
 )
 @EnableConfigurationProperties(DiscoveryProperties.class)
 public class DiscoveryAutoConfiguration {

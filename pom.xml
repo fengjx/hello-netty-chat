@@ -20,6 +20,8 @@
         <module>hello-netty-chat-link</module>
         <module>hello-netty-chat-commons-lang</module>
         <module>hello-netty-chat-commons-app</module>
+        <module>hello-netty-chat-auth</module>
+        <module>hello-netty-chat-auth-api</module>
     </modules>
 
     <properties>
@@ -34,6 +36,7 @@
         <mybatis-plus-boot-starter.version>3.1.2</mybatis-plus-boot-starter.version>
         <zookeeper.version>3.5.5</zookeeper.version>
         <curator.version>4.2.0</curator.version>
+        <dubbo-spring-boot.version>2.7.3</dubbo-spring-boot.version>
     </properties>
 
 
@@ -50,6 +53,11 @@
             <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-starter-web</artifactId>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.dubbo</groupId>
+                <artifactId>dubbo-spring-boot-starter</artifactId>
+                <version>${dubbo-spring-boot.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.apache.commons</groupId>
@@ -94,6 +102,11 @@
             <dependency>
                 <groupId>org.apache.curator</groupId>
                 <artifactId>curator-x-discovery</artifactId>
+                <version>${curator.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.curator</groupId>
+                <artifactId>curator-recipes</artifactId>
                 <version>${curator.version}</version>
             </dependency>
             <dependency>

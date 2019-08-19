@@ -1,6 +1,7 @@
 package com.fengjx.hello.netty.cha.link.server;
 
 import com.fengjx.hello.netty.cha.link.handler.ServerInitializer;
+import com.fengjx.hello.netty.chat.auth.api.AuthService;
 import com.fengjx.hello.netty.chat.commons.link.discovery.DiscoveryService;
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.ChannelFuture;
@@ -9,6 +10,7 @@ import io.netty.channel.EventLoopGroup;
 import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.nio.NioServerSocketChannel;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.dubbo.config.annotation.Reference;
 import org.springframework.beans.factory.DisposableBean;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.CommandLineRunner;
@@ -32,6 +34,9 @@ public class LinkServer implements CommandLineRunner, DisposableBean {
     @Resource
     private DiscoveryService discoveryService;
 
+    @Reference
+    private AuthService authService;
+
     private EventLoopGroup group = new NioEventLoopGroup(5);
     private EventLoopGroup worker = new NioEventLoopGroup(20);
 
@@ -42,6 +47,8 @@ public class LinkServer implements CommandLineRunner, DisposableBean {
         b.childOption(ChannelOption.SO_KEEPALIVE, true);
         ChannelFuture f = b.bind(port).sync();
         if (f.isSuccess()) {
+            String hello = authService.hello();
+            log.info("auth hello: {}", hello);
             discoveryService.register();
             log.info("link server start success: {}", port);
         }

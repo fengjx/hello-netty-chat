@@ -8,7 +8,8 @@
         <version>1.0.0-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
-    <artifactId>hello-netty-chat-link</artifactId>
+
+    <artifactId>hello-netty-chat-auth</artifactId>
 
     <dependencies>
         <dependency>
@@ -26,10 +27,6 @@
             <artifactId>spring-boot-starter</artifactId>
         </dependency>
         <dependency>
-            <groupId>io.netty</groupId>
-            <artifactId>netty-all</artifactId>
-        </dependency>
-        <dependency>
             <artifactId>zookeeper</artifactId>
             <groupId>org.apache.zookeeper</groupId>
             <exclusions>
@@ -42,18 +39,6 @@
                     <groupId>log4j</groupId>
                 </exclusion>
             </exclusions>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.curator</groupId>
-            <artifactId>curator-framework</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.curator</groupId>
-            <artifactId>curator-x-discovery</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.curator</groupId>
-            <artifactId>curator-x-async</artifactId>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
