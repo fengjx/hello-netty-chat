@@ -17,11 +17,11 @@
 
 
     <modules>
-        <module>hello-netty-chat-link</module>
         <module>hello-netty-chat-commons-lang</module>
         <module>hello-netty-chat-commons-app</module>
         <module>hello-netty-chat-auth</module>
         <module>hello-netty-chat-auth-api</module>
+        <module>hello-netty-chat-link</module>
     </modules>
 
     <properties>
@@ -37,6 +37,7 @@
         <zookeeper.version>3.5.5</zookeeper.version>
         <curator.version>4.2.0</curator.version>
         <dubbo-spring-boot.version>2.7.3</dubbo-spring-boot.version>
+        <protobuf.version>3.9.1</protobuf.version>
     </properties>
 
 
@@ -110,6 +111,11 @@
                 <version>${curator.version}</version>
             </dependency>
             <dependency>
+                <groupId>com.google.protobuf</groupId>
+                <artifactId>protobuf-java</artifactId>
+                <version>${protobuf.version}</version>
+            </dependency>
+            <dependency>
                 <groupId>mysql</groupId>
                 <artifactId>mysql-connector-java</artifactId>
             </dependency>
@@ -132,6 +138,11 @@
                 <plugin>
                     <groupId>org.springframework.boot</groupId>
                     <artifactId>spring-boot-maven-plugin</artifactId>
+                </plugin>
+                <plugin>
+                    <groupId>org.xolstice.maven.plugins</groupId>
+                    <artifactId>protobuf-maven-plugin</artifactId>
+                    <version>0.5.0</version>
                 </plugin>
             </plugins>
         </pluginManagement>

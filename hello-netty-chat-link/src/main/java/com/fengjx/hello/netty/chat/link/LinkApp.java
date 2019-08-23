@@ -1,10 +1,7 @@
-package com.fengjx.hello.netty.cha.link;
+package com.fengjx.hello.netty.chat.link;
 
-import com.fengjx.hello.netty.cha.link.server.LinkServer;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-
-import javax.annotation.Resource;
 
 /**
  * @author fengjianxin

@@ -1,4 +1,4 @@
-package com.fengjx.hello.netty.cha.link.handler;
+package com.fengjx.hello.netty.chat.link.handler;
 
 import io.netty.channel.Channel;
 import io.netty.channel.ChannelInitializer;

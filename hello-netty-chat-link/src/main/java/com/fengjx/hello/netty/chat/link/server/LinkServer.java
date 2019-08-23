@@ -1,6 +1,6 @@
-package com.fengjx.hello.netty.cha.link.server;
+package com.fengjx.hello.netty.chat.link.server;
 
-import com.fengjx.hello.netty.cha.link.handler.ServerInitializer;
+import com.fengjx.hello.netty.chat.link.handler.ServerInitializer;
 import com.fengjx.hello.netty.chat.auth.api.AuthService;
 import com.fengjx.hello.netty.chat.commons.link.discovery.DiscoveryService;
 import io.netty.bootstrap.ServerBootstrap;

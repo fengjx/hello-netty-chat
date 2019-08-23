@@ -1,0 +1,31 @@
+syntax = "proto3";
+
+package com.fengjx.hello.netty.chat.link.protobuf;
+
+option java_package = "com.fengjx.hello.netty.chat.link.protobuf";
+option java_outer_classname = "ResponseProtos";
+
+
+enum ResponseType {
+    SUCCESS = 0;
+    FAILURE = 1;
+    NOTLOGIN = 2;
+    TOKEN = 3;
+    MESSAGE = 4;
+    DUPLICATE = 5;
+}
+
+message ResponseHeader {
+    ResponseType type = 1;
+    int64 timestrap = 2;
+}
+
+message ResponseBody {
+    string from = 1;
+    string content = 2;
+}
+
+message Response {
+    ResponseHeader header = 1;
+    ResponseBody body = 2;
+}

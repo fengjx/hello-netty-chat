@@ -1,4 +1,4 @@
-package com.fengjx.hello.netty.cha.link.server;
+package com.fengjx.hello.netty.chat.link.server;
 
 import lombok.Builder;
 import lombok.Getter;
