@@ -1,0 +1,73 @@
+syntax = "proto3";
+
+package com.fengjx.hello.netty.chat.proto;
+
+option java_multiple_files = true;
+option objc_class_prefix = "HNC";
+
+option java_package = "com.fengjx.hello.netty.chat.proto";
+option java_outer_classname = "HncProtos";
+
+
+service InvokService {
+    rpc incok (Request) returns (stream Response) {
+    }
+}
+
+
+enum RequestType {
+    SIGNUP = 0;
+    LOGIN = 1;
+    LOGOUT = 2;
+    CHAT = 3;
+    GETMESSAGE = 4;
+    JOINCHANNEL = 5;
+    LISTCHANNEL = 6;
+    EXITCHANNEL = 7;
+    CHATCHANNEL = 8;
+}
+
+message RequestHeader {
+    RequestType type = 1;
+    int64 timestrap = 2;
+    int32 nonce = 3;
+    string signature = 4;
+    string platform = 5;
+    string userAgent = 6;
+    string token = 7;
+}
+
+message RequestBody {
+
+}
+
+message Request {
+    RequestHeader header = 1;
+    RequestBody body = 2;
+}
+
+
+
+enum ResponseType {
+    SUCCESS = 0;
+    FAILURE = 1;
+    NOTLOGIN = 2;
+    TOKEN = 3;
+    MESSAGE = 4;
+    DUPLICATE = 5;
+}
+
+message ResponseHeader {
+    ResponseType type = 1;
+    int64 timestrap = 2;
+}
+
+message ResponseBody {
+    string from = 1;
+    string content = 2;
+}
+
+message Response {
+    ResponseHeader header = 1;
+    ResponseBody body = 2;
+}
