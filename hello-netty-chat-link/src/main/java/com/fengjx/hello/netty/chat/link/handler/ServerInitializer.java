@@ -8,6 +8,8 @@ import io.netty.handler.codec.protobuf.ProtobufVarint32LengthFieldPrepender;
 import io.netty.handler.timeout.IdleStateHandler;
 import org.springframework.stereotype.Component;
 
+import javax.annotation.Resource;
+
 
 /**
  * @author fengjianxin
@@ -15,6 +17,8 @@ import org.springframework.stereotype.Component;
 @Component
 public class ServerInitializer extends ChannelInitializer<Channel> {
 
+    @Resource
+    private ServerHandler serverHandler;
 
     @Override
     protected void initChannel(Channel ch) {
@@ -24,6 +28,7 @@ public class ServerInitializer extends ChannelInitializer<Channel> {
                 // google Protobuf 编解码
                 .addLast(new ProtobufVarint32FrameDecoder())
                 .addLast(new ProtobufVarint32LengthFieldPrepender())
-                .addLast(new ProtobufEncoder());
+                .addLast(new ProtobufEncoder())
+                .addLast(serverHandler);
     }
 }

@@ -1,6 +1,6 @@
 package com.fengjx.hello.netty.chat.link.dispatch;
 
-import com.fengjx.hello.netty.chat.link.protobuf.RequestProtos;
+import com.fengjx.hello.netty.chat.proto.RequestType;
 import com.google.common.collect.Maps;
 import org.springframework.stereotype.Component;
 
@@ -14,15 +14,15 @@ import java.util.Map;
 @Component
 public class DispatchFactory {
 
-    private final Map<RequestProtos.ActionType, AbstractDispatch> DISPATCH_MAP = Maps.newHashMap();
+    private final Map<RequestType, AbstractDispatch> DISPATCH_MAP = Maps.newHashMap();
 
     @Resource
     public void setDispatchs(List<AbstractDispatch> dispatchs) {
-        dispatchs.forEach(item -> DISPATCH_MAP.put(item.actionType(), item));
+        dispatchs.forEach(item -> DISPATCH_MAP.put(item.type(), item));
     }
 
-    public AbstractDispatch getDispatchByType(RequestProtos.ActionType actionType) {
-        return DISPATCH_MAP.get(actionType);
+    public AbstractDispatch getDispatchByType(RequestType type) {
+        return DISPATCH_MAP.get(type);
     }
 
 }

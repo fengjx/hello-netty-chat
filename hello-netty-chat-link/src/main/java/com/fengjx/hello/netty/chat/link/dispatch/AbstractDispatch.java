@@ -1,7 +1,7 @@
 package com.fengjx.hello.netty.chat.link.dispatch;
 
-import com.fengjx.hello.netty.chat.link.protobuf.RequestProtos;
-import com.fengjx.hello.netty.chat.link.protobuf.ResponseProtos;
+import com.fengjx.hello.netty.chat.proto.Request;
+import com.fengjx.hello.netty.chat.proto.RequestType;
 import io.netty.channel.ChannelHandlerContext;
 
 /**
@@ -9,8 +9,8 @@ import io.netty.channel.ChannelHandlerContext;
  */
 public abstract class AbstractDispatch {
 
-    public abstract RequestProtos.ActionType actionType();
+    public abstract RequestType type();
 
-    public abstract ResponseProtos.Response action(ChannelHandlerContext ctx, RequestProtos.Request request) throws Exception;
+    public abstract void action(ChannelHandlerContext ctx, Request request) throws Exception;
 
 }
