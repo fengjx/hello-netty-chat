@@ -16,13 +16,14 @@ import java.util.Map;
  */
 @Slf4j
 @Component
-public class ServerManager {
+public class ChannelManager {
 
     private static final ChannelGroup GROUP = new DefaultChannelGroup(GlobalEventExecutor.INSTANCE);
-    private static final Map<String, ChannelId> USER_MAP = Maps.newConcurrentMap();
-    private static final Map<ChannelId, String> USER_MAP_REVERSE = Maps.newConcurrentMap();
+    private static final Map<Integer, ChannelGroup> ROOM_GROUP = Maps.newConcurrentMap();
+    private static final Map<Long, UserClient> USER_MAP = Maps.newConcurrentMap();
+    private static final Map<ChannelId, Long> USER_MAP_REVERSE = Maps.newConcurrentMap();
 
-    public String getUserIdByChannelId(ChannelId channelId) {
+    public Long getUserIdByChannelId(ChannelId channelId) {
         return USER_MAP_REVERSE.get(channelId);
     }
 
@@ -30,5 +31,7 @@ public class ServerManager {
         GROUP.add(channel);
         log.info("Client [{}] connected", channel.remoteAddress());
     }
+
+
 
 }
