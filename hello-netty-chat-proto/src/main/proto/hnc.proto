@@ -16,15 +16,9 @@ service InvokService {
 
 
 enum RequestType {
-    SIGNUP = 0;
-    LOGIN = 1;
-    LOGOUT = 2;
-    CHAT = 3;
-    GETMESSAGE = 4;
-    JOINCHANNEL = 5;
-    LISTCHANNEL = 6;
-    EXITCHANNEL = 7;
-    CHATCHANNEL = 8;
+    AUTH = 0;
+    EXIT = 1;
+    MSG = 8;
 }
 
 message RequestHeader {
@@ -45,7 +39,6 @@ message Request {
     RequestHeader header = 1;
     RequestBody body = 2;
 }
-
 
 
 enum ResponseType {

@@ -2,7 +2,7 @@ package com.fengjx.hello.netty.chat.link.handler;
 
 import com.fengjx.hello.netty.chat.link.dispatch.AbstractDispatch;
 import com.fengjx.hello.netty.chat.link.dispatch.DispatchFactory;
-import com.fengjx.hello.netty.chat.link.manager.ServerManager;
+import com.fengjx.hello.netty.chat.link.manager.ChannelManager;
 import com.fengjx.hello.netty.chat.proto.Request;
 import io.netty.channel.*;
 import lombok.extern.slf4j.Slf4j;
@@ -19,13 +19,13 @@ import javax.annotation.Resource;
 public class ServerHandler extends SimpleChannelInboundHandler<Request> {
 
     @Resource
-    private ServerManager serverManager;
+    private ChannelManager channelManager;
     @Resource
     private DispatchFactory dispatchFactory;
 
     @Override
     public void channelActive(ChannelHandlerContext ctx) {
-        serverManager.addGroup(ctx.channel());
+        channelManager.addGroup(ctx.channel());
     }
 
     @Override
