@@ -43,4 +43,41 @@ public class ServerHandler extends SimpleChannelInboundHandler<Request> {
         log.info("ctx flush");
         ctx.flush();
     }
+
+
+    @Override
+    public void channelRegistered(ChannelHandlerContext ctx) throws Exception {
+        log.info("channelRegistered");
+        super.channelRegistered(ctx);
+    }
+
+    @Override
+    public void channelUnregistered(ChannelHandlerContext ctx) throws Exception {
+        log.info("channelUnregistered");
+        super.channelUnregistered(ctx);
+    }
+
+    @Override
+    public void channelInactive(ChannelHandlerContext ctx) throws Exception {
+        log.info("channelInactive");
+        super.channelInactive(ctx);
+    }
+
+    @Override
+    public void userEventTriggered(ChannelHandlerContext ctx, Object evt) throws Exception {
+        log.info("userEventTriggered");
+        super.userEventTriggered(ctx, evt);
+    }
+
+    @Override
+    public void exceptionCaught(ChannelHandlerContext ctx, Throwable cause) throws Exception {
+        log.info("exceptionCaught");
+        super.exceptionCaught(ctx, cause);
+    }
+
+    @Override
+    public void handlerAdded(ChannelHandlerContext ctx) throws Exception {
+        log.info("handlerAdded");
+        super.handlerAdded(ctx);
+    }
 }
