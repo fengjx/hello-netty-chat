@@ -1,3 +1,4 @@
 # 自动装配
 org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
-com.fengjx.hello.netty.chat.commons.link.discovery.DiscoveryAutoConfiguration
+com.fengjx.hello.netty.chat.commons.link.discovery.DiscoveryAutoConfiguration,\
+com.fengjx.hello.netty.chat.commons.spring.MySpringAutoConfiguration
