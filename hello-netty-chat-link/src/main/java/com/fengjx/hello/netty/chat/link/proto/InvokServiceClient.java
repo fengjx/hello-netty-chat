@@ -27,7 +27,7 @@ public class InvokServiceClient {
     }
 
     public void invok(Request request, Consumer<Response> consumer) {
-        stub.incok(request, new StreamObserver<Response>() {
+        stub.invok(request, new StreamObserver<Response>() {
             @Override
             public void onNext(Response response) {
                 consumer.accept(response);
@@ -46,7 +46,7 @@ public class InvokServiceClient {
     }
 
     public void invok(Request request, Consumer<Response> consumerResponse, Consumer<Throwable> consumerThrowable) {
-        stub.incok(request, new StreamObserver<Response>() {
+        stub.invok(request, new StreamObserver<Response>() {
             @Override
             public void onNext(Response response) {
                 consumerResponse.accept(response);

@@ -10,7 +10,7 @@ option java_outer_classname = "HncProtos";
 
 
 service InvokService {
-    rpc incok (Request) returns (stream Response) {
+    rpc invok (Request) returns (stream Response) {
     }
 }
 
@@ -18,7 +18,7 @@ service InvokService {
 enum RequestType {
     AUTH = 0;
     EXIT = 1;
-    MSG = 8;
+    MSG = 3;
 }
 
 message RequestHeader {
@@ -29,6 +29,7 @@ message RequestHeader {
     string platform = 5;
     string userAgent = 6;
     string token = 7;
+    string action = 8;
 }
 
 message RequestBody {

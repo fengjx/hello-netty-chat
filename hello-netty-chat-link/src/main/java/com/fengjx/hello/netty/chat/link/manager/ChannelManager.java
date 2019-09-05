@@ -19,11 +19,18 @@ import java.util.Map;
 @Component
 public class ChannelManager {
 
+    private static final ChannelGroup CONNECT_GROUP = new DefaultChannelGroup(GlobalEventExecutor.INSTANCE);
     private static final ChannelGroup ALL_GROUP = new DefaultChannelGroup(GlobalEventExecutor.INSTANCE);
     private static final Map<Integer, ChannelGroup> ROOM_GROUP = Maps.newConcurrentMap();
     private static final Map<Long, LinkedList<Integer>> USER_ROOM_REVERSE = Maps.newConcurrentMap();
     private static final Map<Long, ChannelGroup> USER_CHANNEL = Maps.newConcurrentMap();
     private static final Map<ChannelId, Long> USER_CHANNEL_REVERSE = Maps.newConcurrentMap();
+
+
+    public void addConnectChannel(Channel channel) {
+        CONNECT_GROUP.add(channel);
+    }
+
 
     public Long getUserIdByChannelId(ChannelId channelId) {
         return USER_CHANNEL_REVERSE.get(channelId);
@@ -105,7 +112,7 @@ public class ChannelManager {
     /**
      * 踢人下线
      */
-    public void kickUser(Long userId){
+    public void kickUser(Long userId) {
 
     }
 

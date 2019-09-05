@@ -25,7 +25,8 @@ public class ServerHandler extends SimpleChannelInboundHandler<Request> {
 
     @Override
     public void channelActive(ChannelHandlerContext ctx) {
-        channelManager.addGroup(ctx.channel());
+        log.info("channelActive");
+        channelManager.addConnectChannel(ctx.channel());
     }
 
     @Override
@@ -40,7 +41,7 @@ public class ServerHandler extends SimpleChannelInboundHandler<Request> {
 
     @Override
     public void channelReadComplete(ChannelHandlerContext ctx) {
-        log.info("ctx flush");
+        log.info("channelReadComplete");
         ctx.flush();
     }
 
