@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: hnc-auth
+  profiles:
+    active: test
+
+
+logging:
+  path: ./logs
+
+server:
+  port: 8080
+
+grpc:
+  port: 50051
+

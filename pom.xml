@@ -22,6 +22,8 @@
         <module>hello-netty-chat-proto</module>
         <module>hello-netty-chat-logic</module>
         <module>hello-netty-chat-link</module>
+        <module>hello-netty-chat-auth</module>
+        <module>hello-netty-chat-client</module>
     </modules>
 
     <properties>

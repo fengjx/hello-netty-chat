@@ -1,4 +1,4 @@
-package com.fengjx.hello.netty.chat.logic.rpc;
+package com.fengjx.hello.netty.chat.commons.rpc;
 
 import io.grpc.Server;
 import io.grpc.ServerBuilder;
