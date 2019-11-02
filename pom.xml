@@ -29,7 +29,7 @@
         <commons-lang3.version>3.9</commons-lang3.version>
         <commons-collections.version>3.2.1</commons-collections.version>
         <hutool-all.version>4.6.1</hutool-all.version>
-        <netty.version>4.1.39.Final</netty.version>
+        <netty.version>4.1.42.Final</netty.version>
         <spring-cloud.version>Greenwich.SR2</spring-cloud.version>
         <mybatis-plus-boot-starter.version>3.1.2</mybatis-plus-boot-starter.version>
         <zookeeper.version>3.5.5</zookeeper.version>
