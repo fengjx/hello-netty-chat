@@ -27,7 +27,7 @@
         <java.version>1.8</java.version>
         <fastjson.version>1.2.59</fastjson.version>
         <commons-lang3.version>3.9</commons-lang3.version>
-        <commons-collections.version>3.2.1</commons-collections.version>
+        <commons-collections.version>3.2.2</commons-collections.version>
         <hutool-all.version>4.6.1</hutool-all.version>
         <netty.version>4.1.39.Final</netty.version>
         <spring-cloud.version>Greenwich.SR2</spring-cloud.version>
