@@ -25,7 +25,7 @@
     <properties>
         <Encoding>UTF-8</Encoding>
         <java.version>1.8</java.version>
-        <fastjson.version>1.2.59</fastjson.version>
+        <fastjson.version>1.2.83</fastjson.version>
         <commons-lang3.version>3.9</commons-lang3.version>
         <commons-collections.version>3.2.1</commons-collections.version>
         <hutool-all.version>4.6.1</hutool-all.version>
